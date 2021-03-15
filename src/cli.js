@@ -1,27 +1,37 @@
-import arg from "arg";
-import chalk from 'chalk'
 
+import indexify from './indexify'
+import undo from './undo'
 import { displayDesign } from "../utils/displayDesign";
+import { initialize } from "./initialize";
+import { exec } from 'child_process'
+import execa from 'execa';
+import Listr from 'listr';
 
-export function cli(args) {
-  displayDesign('#')
+export async function cli(args) {
+  // displayDesign()
+  // * 1) Use Inquirer to propmt the user what he wants to do
+  const { adventure } = await initialize()
+  console.log(adventure);
+
+  // * 2) Switch Statement for running the appropriate Function according to the chosen Advemture
+  switch (adventure) {
+    case 'Indexify':
+      indexify()
+      break;
+    case 'Undo':
+      undo()
+      break;
+  
+    default:
+      break;
+  }
+  // ! TEST CODE
+
+  
+  // ! TEST CODE
+  
+  
+  
+  
 
 }
-
-// function parseArgumentsIntoOptions(rawArgs) {
-//   const args = arg(
-//     {
-//       '--git': Boolean,
-//       '--yes': Boolean,
-//       '--install': Boolean,
-//       '-g': '--git',
-//       '-y': '--yes',
-//       '-i': '--install',
-//     },
-//     {
-//       argv: rawArgs.slice(2)
-//     }
-//   )
-
-
-// }

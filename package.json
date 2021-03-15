@@ -11,7 +11,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ci": "create-index ./"
   },
   "keywords": [
     "cli"
@@ -19,9 +19,14 @@
   "author": "Vaasu Dhand",
   "license": "ISC",
   "dependencies": {
-    "arg": "^5.0.0",
     "chalk": "^4.1.0",
+    "create-index": "^2.6.0",
     "esm": "^3.2.25",
-    "inquirer": "^8.0.0"
+    "execa": "^5.0.0",
+    "inquirer": "^8.0.0",
+    "listr": "^0.14.3"
+  },
+  "devDependencies": {
+    "create-ts-index": "^1.13.6"
   }
 }
