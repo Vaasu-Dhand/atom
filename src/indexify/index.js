@@ -20,13 +20,14 @@ export default async () => {
     message: 'Please enter path of the directory',
     default: './'
   });
+  // ? Add a Question for Flags (But, its not needed)
 
   // * Variables
   const { template, path } = await inquirer.prompt(questions)
   let extension = ""
   let templateData = {
     cmd: '',
-    path: '',
+    path,
     flags: []
   }
   
@@ -43,7 +44,7 @@ export default async () => {
     templateData.cmd = "npx cti create";
     extension = "ts"
 
-  } else {
+  } else {  // Probably Useless
     console.log("Weird!!! Else Ran");
   }
 
@@ -56,14 +57,14 @@ export default async () => {
   ])
   await tasks.run()
 
-  async function createIndexFile({cmd, path}) {
+  async function createIndexFile({cmd, path, flags}) {
     try {
-      await execa(cmd, [path], { // The path has to be the first value in the options array
+      console.log("CMD:", cmd, [path, ...flags]);
+      await execa(cmd, [path, ...flags], { // The path has to be the first value in the options array
         cwd: process.cwd(), // ? Not Sure if this is Correct
       })
     } catch (error) { // * Need to handle Error's better, if something goes wrong need to prompt the user back
       console.log(error);
     }
   }
-  
 }
