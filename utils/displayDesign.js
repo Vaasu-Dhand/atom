@@ -4,18 +4,18 @@ import config from '../config'
 // * Atom Design
 
 function log(string) {  
-  console.log(chalk.keyword(config.color)(string)) // * Change Color Here
+  console.log(chalk.bold.keyword(config.color)(string))
 }
 
-export const displayDesign = () => {
-  console.log("\n");
- 
-  log("     ⚛     ⚛ ⚛ ⚛ ⚛ ⚛    ⚛ ⚛ ⚛        ⚛     ⚛");
-  log("    ⚛ ⚛        ⚛       ⚛     ⚛      ⚛ ⚛   ⚛ ⚛");
-  log("   ⚛   ⚛       ⚛      ⚛       ⚛    ⚛   ⚛ ⚛   ⚛");
-  log("  ⚛ ⚛ ⚛ ⚛      ⚛      ⚛       ⚛   ⚛     ⚛     ⚛");
-  log(" ⚛       ⚛     ⚛       ⚛     ⚛   ⚛             ⚛");
-  log("⚛         ⚛    ⚛        ⚛ ⚛ ⚛   ⚛               ⚛");
+// log(config.char)
 
+export const displayDesign = (c = config.char) => { // * Takes in the Character
+  console.log("\n");
+  log(`     ${c}     ${c} ${c} ${c} ${c} ${c}    ${c} ${c} ${c}        ${c}     ${c}`);
+  log(`    ${c} ${c}        ${c}       ${c}     ${c}      ${c} ${c}   ${c} ${c}`);
+  log(`   ${c}   ${c}       ${c}      ${c}       ${c}    ${c}   ${c} ${c}   ${c}`);
+  log(`  ${c} ${c} ${c} ${c}      ${c}      ${c}       ${c}   ${c}     ${c}     ${c}`);
+  log(` ${c}       ${c}     ${c}       ${c}     ${c}   ${c}             ${c}`);
+  log(`${c}         ${c}    ${c}        ${c} ${c} ${c}   ${c}               ${c}`);
   console.log("\n");
 }

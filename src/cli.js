@@ -4,9 +4,7 @@ import chalk from 'chalk'
 import { displayDesign } from "../utils/displayDesign";
 
 export function cli(args) {
-  displayDesign()
-  // console.log(chalk.red('⚛'));
-
+  displayDesign('#')
 
 }
 
