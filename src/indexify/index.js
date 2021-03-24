@@ -1,6 +1,11 @@
 import execa from "execa";
-import inquirer from "inquirer";
+import inquirer, { prompt } from "inquirer";
 import Listr from "listr";
+import { createJSIndex, createTSIndex } from './config'
+// import chokidar from 'chokidar'
+// import watch from 'node-watch'
+// import fs from 'fs'
+
 
 export default async () => {
   console.log("Indexify Function Ran");
@@ -11,7 +16,7 @@ export default async () => {
     type: 'list',
     name: 'template',  // * Key
     message: 'Please choose which project template to use',
-    choices: ['JavaScript', 'TypeScript'], // * Add Feature Names Here
+    choices: ['JavaScript [JS/JSX]', 'TypeScript [JS/JSX]'], // * Add Feature Names Here
     default: 'JavaScript'
   });
   questions.push({
@@ -24,25 +29,17 @@ export default async () => {
 
   // * Variables
   const { template, path } = await inquirer.prompt(questions)
-  let extension = ""
-  let templateData = {
-    cmd: '',
-    path,
-    flags: []
-  }
-  
+  let templateData;
+
   // * Set TemplateData accordingly
-  if (template === 'JavaScript') {
+  if (template === 'JavaScript [JS/JSX]') {
+    templateData = {...createJSIndex, path}
+    // console.log(templateData);
 
-    console.log("JS Template");
-    templateData.cmd = "npx create-index";
-    extension = "js"
-
-  } else if (template === 'TypeScript') {
-
+  } else if (template === 'TypeScript [JS/JSX]') {
     console.log("TS Template");
-    templateData.cmd = "npx cti create";
-    extension = "ts"
+    templateData = {...createTSIndex, path}
+    // console.log(templateData);
 
   } else {  // Probably Useless
     console.log("Weird!!! Else Ran");
@@ -51,15 +48,15 @@ export default async () => {
   // * Listr Code
   const tasks = new Listr([
     {
-      title: `Create index.${extension}`,
+      title: `Create index.${templateData.extension}`,
       task: () => createIndexFile(templateData)
     }
   ])
   await tasks.run()
 
-  async function createIndexFile({cmd, path, flags}) {
+  async function createIndexFile({ cmd, path, flags }) {
     try {
-      console.log("CMD:", cmd, [path, ...flags]);
+      // console.log("CMD:", cmd, [path, ...flags]);
       await execa(cmd, [path, ...flags], { // The path has to be the first value in the options array
         cwd: process.cwd(), // ? Not Sure if this is Correct
       })

@@ -11,7 +11,7 @@
     "access": "public"
   },
   "scripts": {
-    "cti": "cti ./src/wierd"
+    "cti": "cti create -w ./src/another"
   },
   "keywords": [
     "cli"
@@ -20,11 +20,13 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
+    "chokidar": "^3.5.1",
     "create-index": "^2.6.0",
     "esm": "^3.2.25",
     "execa": "^5.0.0",
     "inquirer": "^8.0.0",
-    "listr": "^0.14.3"
+    "listr": "^0.14.3",
+    "node-watch": "^0.7.1"
   },
   "devDependencies": {
     "create-ts-index": "^1.13.6"

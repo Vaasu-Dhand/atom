@@ -1,11 +1,10 @@
-
 import indexify from './indexify'
 import undo from './undo'
-import { displayDesign } from "../utils/displayDesign";
+import { welcome } from "../utils/welcome";
 import { initialize } from "./initialize";
 
 export async function cli(args) {
-  // displayDesign() // # Rename this function to welcome
+  welcome() 
   // * 1) Use Inquirer to propmt the user what he wants to do
   const { adventure } = await initialize()
 
