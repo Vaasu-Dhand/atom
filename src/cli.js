@@ -1,4 +1,5 @@
 import indexify from './indexify'
+import createProject from './create-project'
 import undo from './undo'
 import { welcome } from "../utils/welcome";
 import { initialize } from "./initialize";
@@ -12,6 +13,9 @@ export async function cli(args) {
   switch (adventure) {
     case 'Indexify':
       indexify()
+      break;
+    case 'Create-Project':
+      createProject()
       break;
     case 'Undo':
       undo()

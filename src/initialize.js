@@ -8,7 +8,7 @@ export const initialize = async () => {
     type: 'list',
     name: 'adventure',  // * Key
     message: 'Choose your own adventure',
-    choices: ['Indexify', 'Undo'] // * Add Feature Names Here
+    choices: ['Indexify', 'Create-Project', 'Undo'] // * Add Feature Names Here
   })
 
   const answers = await inquirer.prompt(questions)

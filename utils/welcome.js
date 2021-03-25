@@ -2,7 +2,7 @@ import chalk from "chalk";
 import config from '../config'
 
 function log(string) {  
-  console.log(chalk.bold.keyword(config.color)(string))
+  console.log(chalk.keyword(config.color)(string))
 }
 
 export const welcome = (c = config.char) => { // * Takes in the Character
@@ -13,5 +13,7 @@ export const welcome = (c = config.char) => { // * Takes in the Character
   log(`  ${c} ${c} ${c} ${c}      ${c}      ${c}       ${c}   ${c}     ${c}     ${c}`);
   log(` ${c}       ${c}     ${c}       ${c}     ${c}   ${c}             ${c}`);
   log(`${c}         ${c}    ${c}        ${c} ${c} ${c}   ${c}               ${c}`);
-  console.log("\n");
+  console.log("");
+  console.log(chalk.yellow('|=================================================|'));
+  console.log(chalk.yellow(`          ${config.greeting(false)}, Welcome to Atom  `));
 }

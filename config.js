@@ -1,4 +1,7 @@
+import getGreeting from "./utils/greeting";
+
 export default {
-  "color": "blueviolet",  // * change log color 
+  "color": "blue",  // * change log color 
   "char": "⚛", 
+  "greeting": getGreeting
 }
