@@ -16,7 +16,7 @@ export default async () => {
     type: 'list',
     name: 'template',  // * Key
     message: 'Please choose which project template to use',
-    choices: ['JavaScript [JS/JSX]', 'TypeScript [JS/JSX]'], // * Add Feature Names Here
+    choices: ['JavaScript [JS/JSX]', 'TypeScript [TS/TSX]'], // * Add Feature Names Here
     default: 'JavaScript'
   });
   questions.push({
@@ -36,7 +36,7 @@ export default async () => {
     templateData = {...createJSIndex, path}
     // console.log(templateData);
 
-  } else if (template === 'TypeScript [JS/JSX]') {
+  } else if (template === 'TypeScript [TS/TSX]') {
     console.log("TS Template");
     templateData = {...createTSIndex, path}
     // console.log(templateData);

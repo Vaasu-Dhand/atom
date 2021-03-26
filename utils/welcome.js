@@ -16,4 +16,5 @@ export const welcome = (c = config.char) => { // * Takes in the Character
   console.log("");
   console.log(chalk.yellow('|=================================================|'));
   console.log(chalk.yellow(`          ${config.greeting(false)}, Welcome to Atom  `));
+  console.log("");
 }
