@@ -1,15 +1,9 @@
 import execa from "execa";
-import inquirer, { prompt } from "inquirer";
+import inquirer from "inquirer";
 import Listr from "listr";
 import { createJSIndex, createTSIndex } from './config'
-// import chokidar from 'chokidar'
-// import watch from 'node-watch'
-// import fs from 'fs'
-
 
 export default async () => {
-  console.log("Indexify Function Ran");
-
   // * Propt user for JS/TS template
   const questions = []
   questions.push({
