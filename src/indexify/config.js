@@ -6,7 +6,7 @@ const createJSIndex = {
 };
 
 const createTSIndex = {
-  cmd: 'npx cti create -w',
+  cmd: 'npx cti create -w -b',
   path: '',
   flags: [], // indexes TS and TSX files
   extension: "ts"

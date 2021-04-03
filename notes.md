@@ -1,5 +1,4 @@
 ### BUGS
-1) create-ts-index creats a .bak file, I dont know why
 
 ### TODO
 1) Work on Error Handling
