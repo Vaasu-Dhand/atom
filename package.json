@@ -1,6 +1,6 @@
 {
   "name": "@vaasudhand/atom",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "My Personal Assistant CLI",
   "main": "src/index.js",
   "bin": {
@@ -11,7 +11,8 @@
     "access": "public"
   },
   "scripts": {
-    "cti": "cti create -w ./src/another",
+    "cti": "npx cti create -b ./src/ts-test",
+    "create": "npx create-index ./src/jsx-test --extensions js jsx",
     "vite": "npm init @vitejs/app"
   },
   "keywords": [
@@ -33,5 +34,9 @@
   },
   "devDependencies": {
     "create-ts-index": "^1.13.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaasu-Dhand/atom"
   }
 }

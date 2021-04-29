@@ -1,4 +1,5 @@
 ### BUGS
+*) It does not work in other projects
 
 ### TODO
 1) Work on Error Handling

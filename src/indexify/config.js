@@ -1,12 +1,12 @@
 const createJSIndex = {
-  cmd: 'npx create-index',
+  cmd: 'create-index',
   path: '',
-  flags: [' --extensions js jsx'], // indexes JS and JSX files
+  flags: ['--extensions js jsx'], // indexes JS and JSX files
   extension: "js"
 };
 
 const createTSIndex = {
-  cmd: 'npx cti create -w -b',
+  cmd: 'create-ts-index create -w -b',  // * cti create does not work with npx
   path: '',
   flags: [], // indexes TS and TSX files
   extension: "ts"
