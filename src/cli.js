@@ -10,7 +10,7 @@ export async function cli(args) {
   // * Flags Code
   const program = new Command();
   program
-    .version(require('../package.json').version)
+    .version(require('../package.json').dependencies['@vaasudhand/atom'])
   program.parse(process.argv);
 
   // * Outputs the options available
