@@ -42,7 +42,7 @@ export default async () => {
   // * Listr Code
   const tasks = new Listr([
     {
-      title: `Create index.${templateData.extension}`,
+      title: `index.${templateData.extension} Generated`,
       task: () => createIndexFile(templateData)
     }
   ])

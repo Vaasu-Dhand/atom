@@ -1,3 +1,4 @@
+import { Command } from 'commander';
 import indexify from './indexify'
 import createProject from './create-project'
 import undo from './undo'
@@ -5,7 +6,18 @@ import { welcome } from "../utils/welcome";
 import { initialize } from "./initialize";
 
 export async function cli(args) {
-  welcome() 
+
+  // * Flags Code
+  const program = new Command();
+  program
+    .version(require('../package.json').version)
+  program.parse(process.argv);
+
+  // * Outputs the options available
+  // const options = program.opts();
+  // console.log(options);
+
+  welcome()
   // * 1) Use Inquirer to propmt the user what he wants to do
   const { adventure } = await initialize()
 
@@ -23,5 +35,4 @@ export async function cli(args) {
     default:
       break;
   }
-
 }

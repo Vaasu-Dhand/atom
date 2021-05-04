@@ -13,7 +13,8 @@
   "scripts": {
     "cti": "npx cti create -b ./src/ts-test",
     "create": "npx create-index ./src/jsx-test --extensions js jsx",
-    "vite": "npm init @vitejs/app"
+    "vite": "npm init @vitejs/app",
+    "start": "node src/cli.js"
   },
   "keywords": [
     "cli"
@@ -21,14 +22,14 @@
   "author": "Vaasu Dhand",
   "license": "ISC",
   "dependencies": {
+    "@vaasudhand/atom": "^1.0.4",
     "chalk": "^4.1.0",
-    "chokidar": "^3.5.1",
+    "commander": "^2.20.3",
     "create-index": "^2.6.0",
     "esm": "^3.2.25",
     "execa": "^5.0.0",
     "inquirer": "^8.0.0",
     "listr": "^0.14.3",
-    "node-watch": "^0.7.1",
     "readcommand": "^0.3.0",
     "shell-history": "^2.0.0"
   },

@@ -13,7 +13,6 @@ read({'history': ['cd', 'ls']}, function(err, args) {
 
 for (let index = 0; index < array.length; index++) {
   const element = array[index];
-  
 }
 
 // read(function(err, args) {
