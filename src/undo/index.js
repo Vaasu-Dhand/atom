@@ -1,5 +1,6 @@
-export default () => {
-  console.log("Undo Function Ran");
-}
 
-// console.log(process.argv);
+
+export default async () => {
+  console.log('undo function ran');
+
+}

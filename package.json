@@ -1,6 +1,6 @@
 {
   "name": "@vaasudhand/atom",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "My Personal Assistant CLI",
   "main": "src/index.js",
   "bin": {
@@ -29,9 +29,8 @@
     "esm": "^3.2.25",
     "execa": "^5.0.0",
     "inquirer": "^8.0.0",
-    "listr": "^0.14.3",
-    "readcommand": "^0.3.0",
-    "shell-history": "^2.0.0"
+    "inquirer-command-prompt": "^0.1.0",
+    "listr": "^0.14.3"
   },
   "devDependencies": {
     "create-ts-index": "^1.13.6"
